@@ -156,6 +156,44 @@
 					</execution>
 				</executions>
 			</plugin>
+			
+					<!-- Spring Doc : copy the index.html to pub.html up the root.--> 
+			<plugin>
+				<artifactId>maven-antrun-plugin</artifactId>
+				<version>1.8</version>
+				<executions>
+					<execution>
+						<id>copy</id>
+						<phase>prepare-package</phase>
+						<configuration>
+							<target>
+								<echo>Copy Index</echo>
+								<move
+									file=  "/Users/dwudel001c/got/guitarra/caster/target/generated-docs/index.html"
+									tofile="/Users/dwudel001c/got/guitarra/caster/target/generated-docs/pub.html" />
+							</target>
+						</configuration>
+						<goals>
+							<goal>run</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+
+ 
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-scm-publish-plugin</artifactId>
+				<version>1.1</version>
+				<configuration>
+					<scmBranch>gh-pages</scmBranch>
+					<pubScmUrl>scm:git:https://github.com/dwudel001c/guitarra.git</pubScmUrl>
+					<scm-publish.siteDocOuputDirectory>/Users/dwudel001c/got/guitarra/</scm-publish.siteDocOuputDirectory>
+				</configuration>
+			</plugin>
+			
+			
+			
 		</plugins>
 	</build>
 

@@ -55,11 +55,6 @@ include::{snippets}/home/http-response.adoc[]
 
 [Health Check]
 
-== Health Check
-
-The Amazon Web Services healthcheck will do a ping to this endpoint every second to determine whether the service is up and healthy
-
-*Endpoint:* localhost:8080/caster/health
 
 === Request
 include::{snippets}/health/http-request.adoc[]
@@ -95,19 +90,7 @@ include::{snippets}/price-200/http-request.adoc[]
 === Response
 include::{snippets}/price-200/http-response.adoc[]
 
-=== Bad Request: invalid media type
-include::{snippets}/price-415/http-request.adoc[]
-
-=== Response
-include::{snippets}/price-415/http-response.adoc[]
-
-=== Bad Request: used Get instead of Post
-include::{snippets}/price-405/http-request.adoc[]
-
-=== Response
-include::{snippets}/price-405/http-response.adoc[]
-
-=== Bad Request: invalid accessType
+=== Bad Request: invalid request
 include::{snippets}/access-400/http-request.adoc[]
 
 === Response
