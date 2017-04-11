@@ -16,13 +16,14 @@
 		<spring-restdocs.version>1.1.2.RELEASE</spring-restdocs.version>
 		<spring-retry.version>1.1.2.RELEASE</spring-retry.version>
 		<maven-javadoc-plugin.version>2.10.4</maven-javadoc-plugin.version>
+		<snippets-directory>${project.build.directory}/generated-snippets</snippets-directory>
 	</properties>
 
 	<dependencies>
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
-			<version>3.8.1</version>
+			<version>4.12</version>
 			<scope>test</scope>
 		</dependency>
 		<!-- Spring -->
@@ -46,7 +47,37 @@
 			<artifactId>spring-boot-starter-web</artifactId>
 			<version>${spring-boot.version}</version>
 		</dependency>
+		<!-- Spring Doc -->
+		<dependency>
+			<groupId>org.easymock</groupId>
+			<artifactId>easymock</artifactId>
+			<version>3.3.1</version>
+			<scope>test</scope>
+		</dependency>
 
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<version>${spring-boot.version}</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.restdocs</groupId>
+			<artifactId>spring-restdocs-mockmvc</artifactId>
+			<version>${spring-restdocs.version}</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.restdocs</groupId>
+			<artifactId>spring-restdocs-restassured</artifactId>
+			<version>${spring-restdocs.version}</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.eclipse.jgit</groupId>
+			<artifactId>org.eclipse.jgit</artifactId>
+			<version>3.5.0.201409260305-r</version>
+		</dependency>
 	</dependencies>
 
 	<build>
@@ -168,8 +199,8 @@
 						<configuration>
 							<target>
 								<echo>Copy Index</echo>
-								<move
-									file=  "/Users/dwudel001c/got/guitarra/caster/target/generated-docs/index.html"
+								<copy
+									file="/Users/dwudel001c/got/guitarra/caster/target/generated-docs/index.html"
 									tofile="/Users/dwudel001c/got/guitarra/caster/target/generated-docs/pub.html" />
 							</target>
 						</configuration>
@@ -188,7 +219,6 @@
 				<configuration>
 					<scmBranch>gh-pages</scmBranch>
 					<pubScmUrl>scm:git:https://github.com/dwudel001c/guitarra.git</pubScmUrl>
-					<scm-publish.siteDocOuputDirectory>/Users/dwudel001c/got/guitarra/</scm-publish.siteDocOuputDirectory>
 				</configuration>
 			</plugin>
 			
