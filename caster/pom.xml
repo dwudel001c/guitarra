@@ -186,27 +186,6 @@
 					</execution>
 				</executions>
 			</plugin>
-			<plugin>
-				<artifactId>maven-antrun-plugin</artifactId>
-				<version>1.8</version>
-				<executions>
-					<execution>
-						<id>copy</id>
-						<phase>prepare-package</phase>
-						<configuration>
-							<target>
-								<echo>Copy Index</echo>
-								<copy
-									file="/Users/dwudel001c/got/guitarra/caster/target/generated-docs/index.html"
-									tofile="/Users/dwudel001c/got/guitarra/caster/target/generated-docs/pub.html" />
-							</target>
-						</configuration>
-						<goals>
-							<goal>run</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin>
 
 
 			<plugin>
@@ -214,6 +193,8 @@
 				<artifactId>maven-scm-publish-plugin</artifactId>
 				<version>1.1</version>
 				<configuration>
+				     <checkoutDirectory>${project.build.outputDirectory}</checkoutDirectory>
+        <tryUpdate>true</tryUpdate>
 					<scmBranch>gh-pages</scmBranch>
 					<pubScmUrl>scm:git:https://github.com/dwudel001c/guitarra.git</pubScmUrl>
 				</configuration>
