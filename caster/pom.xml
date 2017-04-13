@@ -193,7 +193,7 @@
 				<artifactId>maven-scm-publish-plugin</artifactId>
 				<version>1.1</version>
 				<configuration>
-				     <checkoutDirectory>${project.build.outputDirectory}/tempCheckOut</checkoutDirectory>
+				     <checkoutDirectory>${project.build.outputDirectory}</checkoutDirectory>
         <tryUpdate>true</tryUpdate>
 					<scmBranch>gh-pages</scmBranch>
 					<dryRun>true</dryRun>
