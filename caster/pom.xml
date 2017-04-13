@@ -193,9 +193,11 @@
 				<artifactId>maven-scm-publish-plugin</artifactId>
 				<version>1.1</version>
 				<configuration>
-				     <checkoutDirectory>${project.build.outputDirectory}</checkoutDirectory>
+				     <checkoutDirectory>${project.build.outputDirectory}/tempCheckOut</checkoutDirectory>
         <tryUpdate>true</tryUpdate>
 					<scmBranch>gh-pages</scmBranch>
+					<dryRun>true</dryRun>
+					<includes>*.html</includes>
 					<pubScmUrl>scm:git:https://github.com/dwudel001c/guitarra.git</pubScmUrl>
 				</configuration>
 			</plugin>
