@@ -17,6 +17,7 @@
 		<spring-retry.version>1.1.2.RELEASE</spring-retry.version>
 		<maven-javadoc-plugin.version>2.10.4</maven-javadoc-plugin.version>
 		<snippets-directory>${project.build.directory}/generated-snippets</snippets-directory>
+			<pubScmUrl>scm:git:https://github.com/dwudel001c/guitarra.git</pubScmUrl>
 	</properties>
 
 	<dependencies>
@@ -160,6 +161,7 @@
 						<configuration>
 							<backend>html</backend>
 							<doctype>book</doctype>
+							 <sourceDocumentName>telecaster.adoc</sourceDocumentName>
 							<attributes>
 								<snippets>${snippets-directory}</snippets>
 							</attributes>
@@ -188,7 +190,7 @@
 				</executions>
 			</plugin>
 			
-					<!-- Spring Doc : copy the index.html to pub.html up the root.--> 
+					<!-- Spring Doc : copy the index.html to pub.html up the root. 
 			<plugin>
 				<artifactId>maven-antrun-plugin</artifactId>
 				<version>1.8</version>
@@ -201,7 +203,7 @@
 								<echo>Copy Index</echo>
 								<copy
 									file="/Users/dwudel001c/got/guitarra/caster/target/generated-docs/index.html"
-									tofile="/Users/dwudel001c/got/guitarra/caster/target/generated-docs/pub.html" />
+	stuff								tofile="/Users/dwudel001c/got/guitarra/caster/target/generated-docs/pub.html" />
 							</target>
 						</configuration>
 						<goals>
@@ -210,7 +212,7 @@
 					</execution>
 				</executions>
 			</plugin>
-
+-->
  
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -218,7 +220,8 @@
 				<version>1.1</version>
 				<configuration>
 					<scmBranch>gh-pages</scmBranch>
-					<pubScmUrl>scm:git:https://github.com/dwudel001c/guitarra.git</pubScmUrl>
+				
+						<pubScmUrl>${git-url}</pubScmUrl>
 				</configuration>
 			</plugin>
 			
